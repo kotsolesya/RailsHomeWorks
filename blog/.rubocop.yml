@@ -1,0 +1,12 @@
+Metrics/LineLength:
+  Max: 100
+
+AllCops:
+  Exclude:
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'db/**/*'
+    - 'test/**/*'
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'tmp/**/*'

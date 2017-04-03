@@ -1,4 +1,4 @@
-["id", "first_name", "last_name", "username", "password", "email", "birthday", "created_at", "updated_at"]
-[7, "John", "Batler", "spring", "45454545", "some@email1", Mon, 29 Mar 2010 20:41:38 UTC +00:00, Fri, 31 Mar 2017 20:39:49 UTC +00:00, Fri, 31 Mar 2017 20:39:49 UTC +00:00]
-[8, "Mike", "Dov", "summer", "45454545", "some@email2", Wed, 29 Mar 2000 20:41:38 UTC +00:00, Fri, 31 Mar 2017 20:39:49 UTC +00:00, Fri, 31 Mar 2017 20:39:49 UTC +00:00]
-[9, "Kit", "McMarty", "winter", "45454545", "some@email3", Sat, 29 Mar 1997 20:41:38 UTC +00:00, Fri, 31 Mar 2017 20:40:10 UTC +00:00, Fri, 31 Mar 2017 20:40:10 UTC +00:00]
+first_name,last_name,username,password,email,birthday
+John,Batler,spring8,45454545,some8@email1,2010-03-29
+Mike,Dov,summer8,45454545,some8@email2,2000-03-29
+Kit,McMarty,winter8,45454545,some8@email3,1997-03-29

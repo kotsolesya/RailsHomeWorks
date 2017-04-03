@@ -1,6 +1,7 @@
 # user for blog
 class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :last_name, :password, :username
+  # attr_accessible :first_name,  :last_name,  :username,  :password,  :email,  :birthday,  :created_at,  :updated_at
   has_many :posts
   has_many :images, as: :imageable
 

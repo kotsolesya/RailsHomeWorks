@@ -1,3 +1,11 @@
 == Welcome to Rails
 
-Home work 5
+Home work
+
+- Log in
+- Sign in
+- slim
+
+![log_in](https://raw.githubusercontent.com/kotsolesya/RailsHomeWorks/master/blog/public/log_in.png)
+
+![log_in](https://raw.githubusercontent.com/kotsolesya/RailsHomeWorks/master/blog/public/sign_up.png)

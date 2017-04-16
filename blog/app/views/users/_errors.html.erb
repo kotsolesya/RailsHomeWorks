@@ -1,0 +1,7 @@
+<div class='alert'>
+  <ul>
+    <% for message in @user.errors.full_messages %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>

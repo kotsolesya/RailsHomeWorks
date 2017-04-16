@@ -5,16 +5,7 @@
       <div class="col-sm-6 col-md-4 col-md-offset-4">
           <div class="account-wall">
             <%= form_for @user do |f| %>
-              <% if @user.errors.any? %>
-                <div class="error_messages">
-                  <h2>Form is invalid</h2>
-                  <ul>
-                    <% for message in @user.errors.full_messages %>
-                      <li><%= message %></li>
-                    <% end %>
-                  </ul>
-                </div>
-              <% end %>
+              <%= render 'error_messages' %>
             <div class="input-group">
               <%= f.text_field :username, class: 'form-control', placeholder: 'Username' %>
               <%=  f.text_field :email, class: 'form-control', placeholder: 'Email' %>
@@ -22,7 +13,7 @@
               <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
             </div>
             <br>
-            <%= f.submit 'Create user' , class: 'btn btn-lg btn-primary btn-block' %>
+            <%= f.submit 'Create user' , class: 'btn btn-lg btn-primary btn-block', remote: true %>
             <% end %>
           </div>
     </div>

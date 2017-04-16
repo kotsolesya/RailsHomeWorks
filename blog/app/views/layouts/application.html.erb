@@ -1,39 +1,79 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Blog</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-      <div class="container">
-        <nav class="navbar navbar-light bg-faded">
-          <%= link_to 'Home Work', '/', class: "navbar-brand" %>
-          <ul class="nav navbar-nav navbar-right">
+    <body>
 
-            <% if current_user %>
-              <li>Signed in as <%= current_user.username %></li>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <div class="navbar-brand navbar-brand-centered"><%= link_to 'Soft Group', '/' %></div>
+                </div>
 
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">Home work 8</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if current_user %>
+                        <li>
+                            <p class="navbar-text">Signed in as
+                                <%= current_user.username %>
+                            </p>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Task
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <%= link_to 'Update profile', edit_user_path(current_user.id) %>
+                                </li>
+                                <li>
+                                    <a href="#">Another action</a>
+                                </li>
+                                <li>
+                                    <a href="#">Something else here</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">Separated link</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">One more separated link</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><%= link_to "Log out", log_out_path %></li>
+                    </ul>
+                <% else %>
+                    <ul class="nav navbar-nav navbar-right">
 
-              Logged in as <%= current_user.email %>
-              <li><%= link_to "home", '/home' %></li>
-              <li><%= link_to "Log out", log_out_path %></li>
-            <% else %>
+                        <li><%= link_to 'Log in', log_in_path %></li>
+                        <li><%= link_to 'Sign up', sign_up_path %></li>
 
-              <li><%= link_to 'Log in', log_in_path %></li> or
-              <li><%= link_to 'Sign up', sign_up_path %></li>
+                    </ul>
+                    <% end %>
 
-            <% end %>
-
-          </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
         </nav>
-      </div>
 
-    <div class="container">
-    <%= yield %>
-    </div>
-  </body>
+        <div class="container">
+            <%= yield %>
+        </div>
+    </body>
 </html>

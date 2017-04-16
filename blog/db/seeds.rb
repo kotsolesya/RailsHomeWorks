@@ -15,7 +15,7 @@ posts = [
       { title: 'Hello winter', body: 'best day on the year', published_at: '2017-03-27 20:41:38'}
     ]
  posts.each do |ps|
-   Posts.create ps
+   Post.create ps
  end
 
 # seeds for Images
@@ -25,5 +25,5 @@ images = [
       { url: 'http://cdn2-www.cattime.com/assets/uploads/gallery/persian-cats-and-kittens/persian-cats-and-kittens-10.jpg'}
     ]
  images.each do |i|
-   Images.create i
+   Image.create i
  end

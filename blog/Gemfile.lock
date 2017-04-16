@@ -58,6 +58,7 @@ GEM
     method_source (0.8.2)
     mime-types (1.25.1)
     multi_json (1.12.1)
+    mysql2 (0.3.21)
     polyglot (0.3.5)
     power_assert (0.2.2)
     pry (0.10.4)
@@ -121,6 +122,9 @@ GEM
     tzinfo (0.3.53)
     uglifier (3.1.11)
       execjs (>= 0.3.0, < 3)
+    yaml_db (0.5.0)
+      rails (>= 3.0, < 5.1)
+      rake (>= 0.8.7)
 
 PLATFORMS
   ruby
@@ -130,6 +134,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.1.1.0)
   coffee-rails (~> 3.2.1)
   jquery-rails
+  mysql2 (= 0.3.21)
   pry-rails
   rails (= 3.2.22.5)
   sass-rails (~> 3.2.3)
@@ -137,6 +142,7 @@ DEPENDENCIES
   sqlite3
   test-unit (~> 3.0)
   uglifier (>= 1.0.3)
+  yaml_db
 
 BUNDLED WITH
    1.14.6

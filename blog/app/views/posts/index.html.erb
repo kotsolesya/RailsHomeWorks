@@ -1,0 +1,17 @@
+<h1>Listing posts</h1>
+<!-- <%= link_to 'Add New Post', "#collapseExample", :class => "btn btn-primary", id: 'add_post', :role =>  "button", data: { collapse: 'toggle'}, :"aria-expanded" =>  "false", :"aria-controls" => "collapseExample" %> -->
+<button class="btn btn-primary" id="add_post" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Add New Post
+</button>
+<br />
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <%= render 'form' %>
+  </div>
+</div>
+
+<div id="post_holder">
+  <% @posts.each do |post| %>
+      <%= render 'row', post: post %>
+  <% end %>
+</div>

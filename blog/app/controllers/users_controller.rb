@@ -1,5 +1,6 @@
 # controller
 class UsersController < ApplicationController
+  before_filter :authorize
   def index
     order = params[:order] || 'asc'
     @users = User.order("id #{order}")

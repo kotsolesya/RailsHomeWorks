@@ -13,20 +13,8 @@
  *= require_tree .
  */
  @import "bootstrap";
+
  body{
    background: image-url('background.jpg');
    background-size: cover;
-   padding:50px;
-}
-.navbar-brand-centered {
-    position: absolute;
-    left: 50%;
-    display: block;
-    width: 160px;
-    text-align: center;
-    background-color: transparent;
-}
-.navbar>.container .navbar-brand-centered,
-.navbar>.container-fluid .navbar-brand-centered {
-    margin-left: -80px;
 }

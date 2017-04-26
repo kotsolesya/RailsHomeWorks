@@ -3,16 +3,19 @@
 <p>
   <b>Title:</b>
   <%= @post.title %>
+  <%= best_in_place @post, :title, :as => :input %>
 </p>
 
 <p>
   <b>Published at:</b>
   <%= @post.published_at %>
+  <%= best_in_place @post, :published_at, :as => :date %>
 </p>
 
 <p>
   <b>Content:</b>
   <%= @post.body %>
+  <%= best_in_place @post, :body, type: :textarea, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel'%>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

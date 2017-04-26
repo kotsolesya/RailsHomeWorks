@@ -24,7 +24,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(list_params)
+    if @post.update_attributes(params[:post])
+      redirect_to root_url, notice: 'Successful update'
+    else
+      render 'edit'
+    end
   end
 
   def edit; end
@@ -34,12 +38,8 @@ class PostsController < ApplicationController
   end
 
   private
-
-  def list_params
-    params.fetch(:list).permit(:title, :id_user)
-  end
-
   def set_post
     @post = current_user.posts.find(params[:id])
   end
+
 end

@@ -5,3 +5,5 @@ $(document).ready ->
   $('body').on 'click', '#add_post', ->
       $('.collapse').collapse('toggle')
     false
+jQuery ->
+  $('.best_in_place').best_in_place()

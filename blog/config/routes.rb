@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+
   get "sessions/new"
 
    #root to: 'home#index'

@@ -1,6 +1,6 @@
 # post for blog
 class Post < ActiveRecord::Base
-  attr_accessible :body, :published_at, :title
+  attr_accessible :title, :body, :published_at
   belongs_to :user
   has_many :images, as: :imageable
 

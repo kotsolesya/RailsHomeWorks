@@ -17,5 +17,7 @@ module Blog
     config.active_record.whitelist_attributes = true
     config.assets.enabled = true
     config.assets.version = '1.0'
+    config.autoload_paths += %w(#{config.root}/app/models/ckeditor)
+    config.assets.precompile += %w( ckeditor/* ) 
   end
 end

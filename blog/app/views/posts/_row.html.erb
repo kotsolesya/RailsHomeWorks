@@ -1,30 +1,45 @@
-<div class="container" id="post_<%= post.id %>" >
-  <div class="col-xs-12 col-sm-6 col-lg-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <!-- <img class="[ img-circle pull-left ]" src="images/person.png" alt="ok" /> -->
-        <div class="row">
-          <div class="col-md-9">
-            <%= image_tag("person.png", class: "[ img-circle pull-left ]")%>
-            <h3><%= post.user.try(:full_name) %></h3>
-            <h5><span>Shared publicly</span> - <span><%= post.format_date %></span> </h5>
-          </div>
-          <div class="col-md-3">
-            <% if current_user.id == post.user_id %>
-            <span style="float: right"><%= link_to 'Edit', edit_post_path(post) %> <%= link_to '✕', post_path(post), method: :delete, remote: true, class: 'delete_post' %></span>
-            <% end %>
-          </div>
+<div class="container" id="post_<%= post.id %>">
+    <div class="col-xs-12 col-sm-6 col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <!-- <img class="[ img-circle pull-left ]" src="images/person.png" alt="ok" /> -->
+                <div class="row">
+                    <div class="col-md-9">
+                        <%= image_tag("person.png", class: "[ img-circle pull-left ]")%>
+                        <h3><%= post.user.try(:full_name) %></h3>
+                        <h5>
+                            <span>Shared publicly</span>
+                            -
+                            <span><%= post.format_date %></span>
+                        </h5>
+                    </div>
+                    <div class="col-md-3">
+                        <% if current_user.id == post.user_id %>
+
+                        <span style="float: right">
+                            <%= link_to edit_post_path(post) do %>
+                            <i class="fa fa-pencil"></i>
+                            <% end %>
+                            <%= link_to '✕', post_path(post), method: :delete, remote: true, class: 'delete_post' %></span>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="icerik-bilgi">
+                        <h2><%= post.title %></h2>
+                        <!-- <p><%= truncate(post.body, length: 100, omission: '...')  { link_to "Read More", post_path(post.id) } %></p>
+                        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary btn-sm"  %> -->
+                        <% if post.body.length > 150 %>
+                          <%= truncate(post.body, length: 150) %>
+                          <%= link_to_function '...Read more', "$(this).parent().html('#{escape_javascript post.body}')" %>
+                        <% else %>
+                          <%= post.body %>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="panel-body">
-        <div class="col-md-12">
-          <div class="icerik-bilgi">
-            <h2><%= post.title %></h2>
-            <p><%= post.body %></p>
-            <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary btn-sm"  %>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>

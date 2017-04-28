@@ -17,7 +17,7 @@
                         <% if current_user.id == post.user_id %>
 
                         <span style="float: right">
-                            <%= link_to edit_post_path(post) do %>
+                            <%= link_to edit_post_path(post), remote: true do %>
                             <i class="fa fa-pencil"></i>
                             <% end %>
                             <%= link_to '✕', post_path(post), method: :delete, remote: true, class: 'delete_post' %></span>
@@ -29,14 +29,13 @@
                 <div class="col-md-12">
                     <div class="icerik-bilgi">
                         <h2><%= post.title %></h2>
-                        <!-- <p><%= truncate(post.body, length: 100, omission: '...')  { link_to "Read More", post_path(post.id) } %></p>
-                        <%= link_to 'Read More', post_path(post.id), class: "btn btn-primary btn-sm"  %> -->
                         <% if post.body.length > 50 %>
                           <%= truncate_html(post.body, length: 50) %>
                           <%= link_to_function '...Read more', "$(this).parent().html('#{escape_javascript post.body}')" %>
                         <% else %>
                           <%= post.body.html_safe %>
                         <% end %>
+                        <%= social_share_button_tag(@post.title) %>
                     </div>
                 </div>
             </div>

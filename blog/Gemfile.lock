@@ -126,6 +126,8 @@ GEM
       railties (>= 3.1)
       slim (~> 3.0)
     slop (3.6.0)
+    social-share-button (0.10.0)
+      coffee-rails
     sprockets (2.2.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -166,6 +168,7 @@ DEPENDENCIES
   rails (= 3.2.22.5)
   sass-rails (~> 3.2.3)
   slim-rails
+  social-share-button
   sqlite3
   test-unit (~> 3.0)
   truncate_html

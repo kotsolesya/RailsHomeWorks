@@ -15,7 +15,7 @@
 <p>
   <b>Content:</b>
   <%= @post.body %>
-  <%= best_in_place @post, :body, type: :textarea, :as => :textarea, :ok_button => 'Save', :cancel_button => 'Cancel'%>
+  <%= best_in_place @post, :body, type: :cktext_area, :as => :cktext_area, :ok_button => 'Save', :cancel_button => 'Cancel'%>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

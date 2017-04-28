@@ -24,14 +24,21 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update_attributes(params[:post])
-      redirect_to root_url, notice: 'Successful update'
-    else
-      render 'edit'
+    respond_to do |format|
+      if @post.update_attributes(params[:post])
+        format.js
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def edit; end
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
 
   def destroy
     @post.destroy

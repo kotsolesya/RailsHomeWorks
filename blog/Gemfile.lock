@@ -140,6 +140,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    truncate_html (0.9.3)
     tzinfo (0.3.53)
     uglifier (3.1.11)
       execjs (>= 0.3.0, < 3)
@@ -167,6 +168,7 @@ DEPENDENCIES
   slim-rails
   sqlite3
   test-unit (~> 3.0)
+  truncate_html
   uglifier (>= 1.0.3)
   yaml_db
 

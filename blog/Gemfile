@@ -9,6 +9,7 @@ gem 'slim-rails'
 gem 'sqlite3'
 gem 'test-unit', '~> 3.0'
 gem 'yaml_db'
+gem 'truncate_html'
 
 group :assets do
   gem 'bootstrap-datepicker-rails'

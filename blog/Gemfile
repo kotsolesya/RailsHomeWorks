@@ -11,6 +11,7 @@ gem 'social-share-button'
 gem 'test-unit', '~> 3.0'
 gem 'yaml_db'
 gem 'truncate_html'
+gem 'will_paginate', '~> 3.1.0'
 
 group :assets do
   gem 'bootstrap-datepicker-rails'

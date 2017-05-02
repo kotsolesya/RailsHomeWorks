@@ -1,1 +1,1 @@
-$("#post_<%= @post.id %>").replaceWith('<%= j render 'posts/form' %>');
+$("#post_<%= @post.id %>").replaceWith("<%= j(render 'form', post: @post) %>");

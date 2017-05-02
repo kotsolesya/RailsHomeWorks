@@ -3,8 +3,13 @@ class PostsController < ApplicationController
   before_filter :set_post, only: [:update, :edit, :destroy]
 
   def index
-    @posts ||= Post.order('created_at DESC')
+    #@posts ||= Post.order('created_at DESC')
+    @posts = Post.paginate(:page => params[:page]).order('created_at DESC')
     @post = Post.new
+    respond_to do |format|
+      format.html
+      format.js { render 'shared/post_page' }
+    end
   end
 
   def new
@@ -29,7 +34,7 @@ class PostsController < ApplicationController
         format.js
       else
         format.html { render action: 'edit' }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        #format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end

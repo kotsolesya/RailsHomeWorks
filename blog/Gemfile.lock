@@ -146,6 +146,7 @@ GEM
     tzinfo (0.3.53)
     uglifier (3.1.11)
       execjs (>= 0.3.0, < 3)
+    will_paginate (3.1.5)
     yaml_db (0.5.0)
       rails (>= 3.0, < 5.1)
       rake (>= 0.8.7)
@@ -173,6 +174,7 @@ DEPENDENCIES
   test-unit (~> 3.0)
   truncate_html
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.1.0)
   yaml_db
 
 BUNDLED WITH

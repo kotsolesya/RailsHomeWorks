@@ -1,3 +1,3 @@
-$('#post_holder').prepend("<%= j(render 'row', post: @post) %>");
+$('#post_holder').prepend("<%= j(render 'post', post: @post) %>");
 $('form')[0].reset()
 $('.collapse').collapse('toggle')

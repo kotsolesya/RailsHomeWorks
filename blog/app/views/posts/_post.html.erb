@@ -11,6 +11,7 @@
                             <span>Shared publicly</span>
                             -
                             <span><%= post.format_date %></span>
+
                         </h5>
                     </div>
                     <div class="col-md-3">
@@ -28,13 +29,13 @@
             <div class="panel-body">
                 <div class="col-md-12">
                     <div class="icerik-bilgi">
-                        <h2><%= post.title %></h2>
-                        <% if post.body.length > 50 %>
+                        <h2><%= best_in_place post, :title, :as => :input, :ok_button => 'Save', :cancel_button => 'Cancel' %></h2>
+                          <% if post.body.length > 50 %>
                           <%= truncate_html(post.body, length: 50) %>
                           <%= link_to_function '...Read more', "$(this).parent().html('#{escape_javascript post.body}')" %>
-                        <% else %>
-                          <%= post.body.html_safe %>
-                        <% end %>
+                          <% else %>
+                            <%= post.body.html_safe %>
+                          <% end %>
                         <%= social_share_button_tag(@post.title) %>
                     </div>
                 </div>

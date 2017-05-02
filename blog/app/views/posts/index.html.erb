@@ -10,8 +10,10 @@
   </div>
 </div>
 
-<div id="post_holder">
-  <% @posts.each do |post| %>
-      <%= render 'row', post: post %>
-  <% end %>
+<div id="feed">
+    <%= render @posts %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @posts %>
 </div>

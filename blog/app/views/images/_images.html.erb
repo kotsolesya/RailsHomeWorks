@@ -1,0 +1,7 @@
+<div id="comments">
+<% @images.each do |image| %>
+  <div class="comment">
+    <%= simple_format image.url %>
+  </div>
+<% end %>
+</div>

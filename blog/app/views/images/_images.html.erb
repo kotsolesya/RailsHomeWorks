@@ -2,6 +2,7 @@
 <% @images.each do |image| %>
   <div class="comment">
     <%= simple_format image.url %>
+    <%= image_tag image.photo.url %>
   </div>
 <% end %>
 </div>

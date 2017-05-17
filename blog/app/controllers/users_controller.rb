@@ -1,6 +1,6 @@
 # controller
 class UsersController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, except: [:new, :create]
   def index
     order = params[:order] || 'asc'
     @users = User.order("id #{order}")

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessible :birthday, :email, :first_name, :last_name, :password, :username, :password_confirmation
   attr_accessor :password
 
+  EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save :encrypt_password
 
   has_many :posts
@@ -13,6 +14,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, on: :create
   validates_presence_of :email
   validates_uniqueness_of :email
+  validates :email, format: EMAIL_REGEX
   validates :username, presence: true
   validates :username, uniqueness: true
 
